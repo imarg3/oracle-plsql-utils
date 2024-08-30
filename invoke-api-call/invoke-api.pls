@@ -9,7 +9,6 @@ create or replace PROCEDURE invoke_api_call AS
     value           VARCHAR2(1024);
 BEGIN
     -- Prepare the HTTP request- Prepare the HTTP request
-    -- utl_http.set_proxy('squid.corp.redhat.com:3128');
     utl_http.set_wallet('file:/u01/wallet/', 'OracleWallet123');
     l_http_request := utl_http.begin_request(l_url, 'GET', 'HTTP/1.1');
     utl_http.set_header(l_http_request, 'user-agent', 'mozilla/4.0');
